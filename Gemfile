@@ -3,9 +3,11 @@ source "https://rubygems.org"
 ruby "2.3.0"
 
 gem "bourbon", "~> 4.2.0"
+gem "coffee-rails"
 gem "decent_exposure"
 gem "flutie"
-gem "coffee-rails"
+gem "her"
+gem "interactor-rails", "~> 2.0"
 gem "jquery-rails"
 gem "money-rails"
 gem "neat", "~> 1.7.0"
@@ -28,6 +30,8 @@ source "https://rails-assets.tenex.tech" do
 end
 
 group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "brakeman"
   gem "quiet_assets"
   gem "refills"

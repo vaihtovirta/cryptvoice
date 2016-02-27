@@ -1,12 +1,12 @@
 class InvoicesController < ApplicationController
   expose(:invoice, attributes: :invoice_params)
-  expose(:currencies) { Invoice.currencies.keys.map(&:upcase) }
+  expose(:currencies) { Invoice.currencies.keys }
 
   def new
   end
 
   def create
-    invoice.save
+    result = ProcessInvoice.call(params: invoice_params)
 
     respond_with invoice, location: new_invoice_path
   end

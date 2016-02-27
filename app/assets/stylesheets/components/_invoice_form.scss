@@ -1,3 +1,14 @@
 .new-invoice__currency-input {
-  padding-bottom: 1rem;
+  padding-bottom: 1em;
+}
+
+.new-invoice__form {
+  @include outer-container;
+}
+
+.new-invoice__currency {
+  float: right;
+}
+.new-invoice__price {
+  float: left;
 }
