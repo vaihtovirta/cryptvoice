@@ -1,0 +1,8 @@
+header.navigation role="banner"
+  .navigation-wrapper
+    = link_to "#", class: "logo" do
+      = image_tag "logo"
+    nav role="navigation"
+      ul#js-navigation-menu.navigation-menu.show
+        li.nav-link
+          = link_to "New Invoice", new_invoice_path

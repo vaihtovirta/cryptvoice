@@ -1,0 +1,20 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[name="ROBOTS" content="NOODP"]
+    meta[name="viewport" content="initial-scale=1"]
+    
+    title
+      = title
+    = stylesheet_link_tag :application, media: "all"
+    = csrf_meta_tags
+  |  <body class="
+  = body_class
+  | "> 
+  = render "flashes"
+  = render "refills/navigation"
+  section.container
+    .wrapper
+      = yield
+  = render "javascript"
