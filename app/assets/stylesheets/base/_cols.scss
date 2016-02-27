@@ -1,0 +1,7 @@
+.small {
+  @include span-columns(6);
+}
+
+.offset-3 {
+  @include shift(3);
+}

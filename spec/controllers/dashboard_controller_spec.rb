@@ -1,8 +1,10 @@
 require "rails_helper"
 
 describe DashboardController do
-  describe "#index" do
-    subject { get :index }
+  render_views
+
+  describe "#GET index" do
+    before { get :index }
 
     it { is_expected.to render_template(:index) }
   end

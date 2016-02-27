@@ -5,6 +5,7 @@ ruby "2.3.0"
 gem "bourbon", "~> 4.2.0"
 gem "decent_exposure"
 gem "flutie"
+gem "coffee-rails"
 gem "jquery-rails"
 gem "money-rails"
 gem "neat", "~> 1.7.0"
@@ -21,6 +22,10 @@ gem "simple_form"
 gem "slim-rails"
 gem "title"
 gem "uglifier"
+
+source "https://rails-assets.tenex.tech" do
+  gem "rails-assets-selectivity"
+end
 
 group :development do
   gem "brakeman"

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :invoices
   root to: "dashboard#index"
 
-  resources :invoices
+  resources :invoices, only: %i(new create)
 end

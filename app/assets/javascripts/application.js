@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require selectivity
+//= require components/app
+//= require components/selectivity_initializer
 //= require_tree .

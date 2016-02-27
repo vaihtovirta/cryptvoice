@@ -1,0 +1,8 @@
+fieldset.new-invoice__form
+  = simple_form_for invoice do |f|
+    = f.input :custom_id
+    = f.input :price_cents
+    = f.input :currency, 
+      collection: Invoice.currencies.keys, 
+      input_html: { class: "new-invoice__currency-input" }
+    = f.submit "Submit"
