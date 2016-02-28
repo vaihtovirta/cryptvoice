@@ -1,6 +1,7 @@
 .hero {
   $large-screen: em(860) !default;
   $hero-color: $black;
+
   padding-bottom: 3em;
 
   .hero-inner {
@@ -9,7 +10,9 @@
 
     margin: auto;
     padding: 3.5em;
+
     text-align: center;
+
     color: $hero-color;
 
 
