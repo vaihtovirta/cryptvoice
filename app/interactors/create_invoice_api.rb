@@ -1,11 +1,12 @@
 class CreateInvoiceApi
-  include MoneyRails::ActionViewExtension, Interactor
+  include Interactor
 
   delegate :params, to: :context
 
   def call
+    rename_mappings
     create_invoice
-    
+
     context.invoice_from_api = saved_invoice
   end
 
@@ -22,13 +23,19 @@ class CreateInvoiceApi
   end
 
   def new_invoice
-    @invoice ||= Api::Invoice.new(prepared_params)
+    @invoice ||= Api::Invoice.new(params)
   end
 
-  def prepared_params
-    params[:id] = params[:custom_id]
-    params[:price] = params[:price_cents]
-    params[:currency] = params[:currency].upcase
-    params.except!(:custom_id, :price_cents)
+  def rename_mappings
+    key_aliases.each do |k, v|
+      params[v] = params.delete(k)
+    end
+  end
+
+  def key_aliases
+    {
+      custom_id: :id,
+      price_cents: :price
+    }
   end
 end

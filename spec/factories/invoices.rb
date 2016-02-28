@@ -7,9 +7,9 @@ FactoryGirl.define do
     validation_hash { SecureRandom.hex(10) }
     callback_params { { format: "anything" }.to_json }
     status "pending"
-    currency "usd"
+    currency "USD"
     btc_address { Faker::Bitcoin.address }
     price_cents 10_000
-    valid_till { Time.now + 10.minutes }
+    valid_till { Time.zone.now + 10.minutes }
   end
 end

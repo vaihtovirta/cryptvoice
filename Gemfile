@@ -19,6 +19,7 @@ gem "rack-canonical-host"
 gem "rails", "~> 4.2.5.1"
 gem "recipient_interceptor"
 gem "responders"
+gem "rqrcode"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "slim-rails"
@@ -26,6 +27,7 @@ gem "title"
 gem "uglifier"
 
 source "https://rails-assets.tenex.tech" do
+  gem "rails-assets-jquery-maskmoney"
   gem "rails-assets-selectivity"
 end
 
@@ -64,6 +66,7 @@ group :test do
   gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "webmock"
+  gem "vcr"
 end
 
 group :staging, :production do

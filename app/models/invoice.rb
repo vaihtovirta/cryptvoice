@@ -11,10 +11,21 @@ class Invoice < ActiveRecord::Base
     overpaid:  4,
     timeout:   5
   }
+
   enum currency: {
-    usd: 0,
-    eur: 1,
-    gbp: 2,
-    btc: 3
+    usd: "USD",
+    eur: "EUR",
+    gbp: "GBP",
+    btc: "BTC"
   }
+
+  validates :price_cents, :currency, presence: true
+
+  def qr_code_path
+    "/qr_codes/#{uuid}.png"
+  end
+
+  def to_param
+    uuid
+  end
 end

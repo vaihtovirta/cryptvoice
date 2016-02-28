@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(version: 20160227142503) do
     t.string   "validation_hash"
     t.jsonb    "callback_params"
     t.integer  "status",          default: 0
-    t.integer  "currency",        default: 0
+    t.string   "currency",        default: "USD"
     t.string   "btc_address"
-    t.integer  "price_cents",     default: 0, null: false
+    t.string   "bitcoin_uri"
+    t.integer  "price_cents",     default: 0,     null: false
     t.datetime "valid_till"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
