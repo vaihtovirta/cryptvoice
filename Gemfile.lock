@@ -109,7 +109,6 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
-    flutie (2.0.0)
     formulaic (0.3.0)
       activesupport
       capybara
@@ -197,6 +196,8 @@ GEM
       sprockets-rails
     rails-assets-jquery (2.2.1)
     rails-assets-jquery-maskmoney (3.0.2)
+    rails-assets-jquery.countdown (2.1.0)
+      rails-assets-jquery (>= 1.7)
     rails-assets-microplugin (0.0.3)
     rails-assets-selectize (0.12.1)
       rails-assets-jquery (>= 1.7.0)
@@ -306,9 +307,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
-    title (0.0.5)
-      i18n
-      rails (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -342,7 +340,6 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
-  flutie
   formulaic
   her
   interactor-rails (~> 2.0)
@@ -360,6 +357,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 4.2.5.1)
   rails-assets-jquery-maskmoney!
+  rails-assets-jquery.countdown!
   rails-assets-selectize!
   recipient_interceptor
   refills
@@ -376,7 +374,6 @@ DEPENDENCIES
   slim_lint
   spring
   spring-commands-rspec
-  title
   uglifier
   vcr
   webmock

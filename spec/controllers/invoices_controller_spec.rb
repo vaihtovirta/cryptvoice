@@ -7,6 +7,13 @@ describe InvoicesController do
     it { is_expected.to render_template(:new) }
   end
 
+  describe "#GET show" do
+    let(:invoice) { create(:invoice) }
+    before { get :show, id: invoice }
+
+    it { is_expected.to render_template(:show) }
+  end
+
   describe "#POST create", vcr: { cassette_name: "cryptopay_api/post_invoices" } do
     let(:attributes) { attributes_for(:invoice).slice(:custom_id, :price_cents, :currency) }
     before { post :create, invoice: attributes }

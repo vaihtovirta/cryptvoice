@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require selectize/standalone/selectize
 //= require jquery-maskmoney/src/jquery.maskMoney
+//= require jquery.countdown
 //= require components/app
 //= require components/select_box
-//= require_tree .
+//= require components/countdown

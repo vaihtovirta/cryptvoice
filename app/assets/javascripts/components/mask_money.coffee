@@ -4,7 +4,8 @@ class MaskMoney
     @_initMaskMoney()
 
   _initMaskMoney: () ->
-    @select.maskMoney()
+    @select.maskMoney
+      thousands: ''
 
 PRICE_INPUT = $("#invoice_price_cents")
 

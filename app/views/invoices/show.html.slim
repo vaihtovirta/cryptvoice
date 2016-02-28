@@ -1,5 +1,8 @@
-.small.offset-3
+.very-small.offset-3
   .invoice-qr-code
-    = raw qr_code
-  .offset-3  
-    = link_to "Dismiss", new_invoice_path
+    = raw invoice.bitcoin_uri_qr_code
+  .countdown
+    .row
+      .countdown__valid-for-text Valid for:
+      .countdown__timer data-valid-till=invoice.valid_till_time
+  = link_to "Dismiss", new_invoice_path

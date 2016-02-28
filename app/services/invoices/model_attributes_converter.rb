@@ -27,12 +27,17 @@ module Invoices
     def prepare_attributes
       attributes[:custom_id] = attributes[:id]
       attributes[:price] = to_money
+      attributes[:valid_till] = to_time(attributes[:valid_till])
 
       attributes.slice(*MODEL_ATTRIBUTES)
     end
 
     def to_money
       Money.from_amount(attributes[:price].to_f, attributes[:currency])
+    end
+
+    def to_time(timestamp)
+      Time.zone.at(timestamp).to_datetime
     end
   end
 end

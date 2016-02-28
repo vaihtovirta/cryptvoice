@@ -4,14 +4,11 @@ html[lang="en"]
     meta[charset="utf-8"]
     meta[name="ROBOTS" content="NOODP"]
     meta[name="viewport" content="initial-scale=1"]
-    
-    title
-      = title
+
+    title Cryptvoice
     = stylesheet_link_tag :application, media: "all"
     = csrf_meta_tags
-  |  <body class="
-  = body_class
-  | "> 
+body
   = render "flashes"
   = render "refills/navigation"
   .container
