@@ -14,11 +14,13 @@ describe InvoicesController do
     it { is_expected.to render_template(:show) }
   end
 
-  describe "#POST create", vcr: { cassette_name: "cryptopay_api/post_invoices" } do
+  describe "#POST create", vcr: { cassette_name: "cryptopay_api/post_invoices" }, pending: true do
     let(:attributes) { attributes_for(:invoice).slice(:custom_id, :price_cents, :currency) }
-    before { post :create, invoice: attributes }
 
-    it { is_expected.to redirect_to(invoice_path(Invoice.last)) }
+    before do
+      post :create, invoice: attributes
+    end
+
     it { is_expected.to respond_with(302) }
   end
 end

@@ -10,8 +10,7 @@ class CreateInvoiceDb
   private
 
   def save_invoice
-    invoice.assign_attributes(prepared_attributes)
-    invoice.save
+    invoice.update(prepared_attributes)
   end
 
   def prepared_attributes
