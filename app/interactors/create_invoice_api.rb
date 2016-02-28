@@ -3,11 +3,12 @@ class CreateInvoiceApi
 
   delegate :params, to: :context
 
-  def call
-    rename_mappings
-    create_invoice
+  after do
+    context.invoice_attributes = saved_invoice.attributes
+  end
 
-    context.invoice_from_api = saved_invoice
+  def call
+    create_invoice
   end
 
   private
@@ -17,25 +18,14 @@ class CreateInvoiceApi
   end
 
   def saved_invoice
-    return @saved_invoice if defined?(@saved_invoice)
-
-    @saved_invoice = new_invoice.save
+    @saved_invoice ||= new_invoice.save
   end
 
   def new_invoice
-    @invoice ||= Api::Invoice.new(params)
+    @invoice ||= Api::Invoice.new(prepared_params)
   end
 
-  def rename_mappings
-    key_aliases.each do |k, v|
-      params[v] = params.delete(k)
-    end
-  end
-
-  def key_aliases
-    {
-      custom_id: :id,
-      price_cents: :price
-    }
+  def prepared_params
+    @prepared_params ||= Invoices::ApiParamsConverter.new(params).call
   end
 end

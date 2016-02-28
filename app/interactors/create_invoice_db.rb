@@ -1,46 +1,20 @@
 class CreateInvoiceDb
   include Interactor
 
-  MODEL_ATTRIBUTES = %i(
-    uuid
-    btc_address
-    bitcoin_uri
-    callback_params
-    custom_id
-    description
-    name
-    price
-    status
-    valid_till
-    validation_hash
-  ).freeze
-
-  delegate :params, :invoice_from_api, to: :context
+  delegate :invoice, :invoice_attributes, to: :context
 
   def call
-    context.fail! unless invoice
-
-    context.invoice = invoice
+    context.fail! unless save_invoice
   end
 
   private
 
-  def invoice
-    @invoice ||= Invoice.create(prepared_attributes)
+  def save_invoice
+    invoice.assign_attributes(prepared_attributes)
+    invoice.save
   end
 
   def prepared_attributes
-    attributes[:custom_id] = attributes[:id]
-    attributes[:price] = calc_money(attributes[:price], attributes[:currency])
-
-    attributes.slice(*MODEL_ATTRIBUTES)
-  end
-
-  def attributes
-    @attributes ||= invoice_from_api.attributes
-  end
-
-  def calc_money(price, currency)
-    Money.from_amount(price.to_f, currency)
+    Invoices::ModelAttributesConverter.new(invoice_attributes).call
   end
 end

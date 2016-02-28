@@ -10,9 +10,9 @@ class InvoicesController < ApplicationController
   end
 
   def create
-    result = ProcessInvoice.call(params: invoice_params) if invoice.valid?
+    ProcessInvoice.call(invoice: invoice, params: invoice_params) if invoice.valid?
 
-    respond_with result.invoice
+    respond_with invoice
   end
 
   private
