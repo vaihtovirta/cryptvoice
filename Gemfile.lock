@@ -195,12 +195,14 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.5.1)
       sprockets-rails
-    rails-assets-font-awesome (4.5.0)
     rails-assets-jquery (2.2.1)
     rails-assets-jquery-maskmoney (3.0.2)
-    rails-assets-selectivity (2.1.0)
-      rails-assets-font-awesome (>= 4.1.0)
-      rails-assets-jquery (>= 1.9)
+    rails-assets-microplugin (0.0.3)
+    rails-assets-selectize (0.12.1)
+      rails-assets-jquery (>= 1.7.0)
+      rails-assets-microplugin (~> 0.0.0)
+      rails-assets-sifter (~> 0.4.0)
+    rails-assets-sifter (0.4.5)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -358,7 +360,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 4.2.5.1)
   rails-assets-jquery-maskmoney!
-  rails-assets-selectivity!
+  rails-assets-selectize!
   recipient_interceptor
   refills
   responders

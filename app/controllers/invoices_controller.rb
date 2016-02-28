@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
   expose(:invoice, attributes: :invoice_params)
-  expose(:currencies) { Invoice.currencies }
+  expose(:currencies) { Invoice.currencies.values }
   expose(:qr_code) { GenerateQrCode.new(invoice.bitcoin_uri).call }
 
   def new

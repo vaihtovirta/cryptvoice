@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require selectivity
-//= require selectivity
+//= require selectize/standalone/selectize
 //= require jquery-maskmoney/src/jquery.maskMoney
 //= require components/app
-//= require components/selectivity_initializer
+//= require components/select_box
 //= require_tree .

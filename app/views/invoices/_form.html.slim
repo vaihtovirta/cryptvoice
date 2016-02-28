@@ -1,12 +1,13 @@
 fieldset.new-invoice__form
   = simple_form_for invoice do |f|
-    = f.input :custom_id, label: "Custom id"
+    = f.input :custom_id, label: "Custom Id"
     .row
-      .new-invoice__price
+      .small
         = f.input :price_cents, as: :string, title: "Price"
-      .new-invoice__currency
+      .small
         = f.input :currency,
           collection: currencies,
-          value: number_with_precision(f.object.currency, precision: 2),
+          include_blank: false,
+          value: currencies.first,
           input_html: { class: "new-invoice__currency-input" }
-    = f.submit "Submit"
+    = f.button :submit, class: 'button fill'

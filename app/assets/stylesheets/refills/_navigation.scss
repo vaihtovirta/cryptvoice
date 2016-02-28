@@ -5,8 +5,8 @@ header.navigation {
   $dark-gray: #333 !default;
   $large-screen: em(860) !default;
   $navigation-padding: 1em;
-  $navigation-background: $dark-gray;
-  $navigation-color: transparentize($white, .3);
+  $navigation-background: $blue;
+  $navigation-color: $light-blue;
   $navigation-color-hover: $white;
   $navigation-height: 60px;
   $navigation-nav-button-background: $base-accent-color;
@@ -24,7 +24,6 @@ header.navigation {
   width: 100%;
   min-height: $navigation-height;
 
-  border-bottom: 1px solid darken($navigation-background, 10);
   background-color: $navigation-background;
 
   a {

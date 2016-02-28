@@ -28,7 +28,7 @@ gem "uglifier"
 
 source "https://rails-assets.tenex.tech" do
   gem "rails-assets-jquery-maskmoney"
-  gem "rails-assets-selectivity"
+  gem "rails-assets-selectize"
 end
 
 group :development do
