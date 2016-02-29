@@ -6,7 +6,7 @@ class Countdown
 
   _initCountdown: () ->
     @clock.countdown @validTill, (event) ->
-      $(@).html(event.strftime("%M:%S"))
+      $(@).html(event.strftime("Valid for: %M:%S"))
 
 CLOCK = $(".countdown__timer")
 

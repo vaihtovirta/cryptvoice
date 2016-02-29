@@ -10,8 +10,6 @@ html[lang="en"]
     = csrf_meta_tags
 body
   = render "flashes"
-  = render "refills/navigation"
-  .container
-    .wrapper
-      = yield
+  = render "shared/navigation"
+  = yield
   = render "javascript"

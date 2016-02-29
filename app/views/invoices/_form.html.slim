@@ -1,13 +1,14 @@
-fieldset.new-invoice__form
+.invoice-form.column.is-half
   = simple_form_for invoice do |f|
-    = f.input :custom_id, label: "Custom Id"
-    .row
-      .small
-        = f.input :price_cents, as: :string, title: "Price"
-      .small
-        = f.input :currency,
+    .control
+      .label
+      = f.input_field :custom_id, placeholder: "Custom Id", class: "input is-medium"
+    .control.is-grouped
+      = f.input_field :price_cents, as: :string, placeholder: "Price", class: "input is-medium"
+      span.select.invoice-form__currency-select-wrapper
+        = f.input_field :currency,
           collection: currencies,
           include_blank: false,
-          value: currencies.first,
-          input_html: { class: "new-invoice__currency-input" }
-    = f.button :submit, class: "button fill"
+          value: currencies.first, class: "invoice-form__currency-select input is-medium"
+    .control
+      = f.button :submit, class: "button is-primary is-medium"

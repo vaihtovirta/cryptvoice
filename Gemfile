@@ -2,15 +2,13 @@ source "https://rubygems.org"
 
 ruby "2.3.0"
 
-gem "bourbon", "~> 4.2.0"
+gem "bulma-rails", "~> 0.0.14"
 gem "coffee-rails"
 gem "decent_exposure"
 gem "her"
 gem "interactor-rails", "~> 2.0"
 gem "jquery-rails"
 gem "money-rails"
-gem "neat", "~> 1.7.0"
-gem "newrelic_rpm", ">= 3.9.8"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
 gem "puma"
@@ -25,9 +23,8 @@ gem "slim-rails"
 gem "uglifier"
 
 source "https://rails-assets.tenex.tech" do
-  gem "rails-assets-jquery.countdown"
   gem "rails-assets-jquery-maskmoney"
-  gem "rails-assets-selectize"
+  gem "rails-assets-jquery.countdown"
 end
 
 group :development do
@@ -35,7 +32,6 @@ group :development do
   gem "binding_of_caller"
   gem "brakeman"
   gem "quiet_assets"
-  gem "refills"
   gem "rubocop-rspec", require: false
   gem "rubocop", require: false
   gem "slim_lint", require: false
@@ -64,10 +60,11 @@ group :test do
   gem "formulaic"
   gem "shoulda-matchers"
   gem "simplecov", require: false
-  gem "webmock"
   gem "vcr"
+  gem "webmock"
 end
 
 group :staging, :production do
   gem "rack-timeout"
+  gem "rails_12factor"
 end

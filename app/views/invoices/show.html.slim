@@ -1,8 +1,8 @@
-.very-small.offset-3
-  .invoice-qr-code
-    = raw invoice.bitcoin_uri_qr_code
-  .countdown
-    .row
-      .countdown__valid-for-text Valid for:
-      .countdown__timer data-valid-till=invoice.valid_till_time
-  = link_to "Dismiss", new_invoice_path
+.invoice-qr-code.column.is-half.is-offset-4
+  .column.is-half
+    .notification.is-primary
+      = link_to "", new_invoice_path, class: "delete"
+      .countdown.is-half.is-offset-quarter
+        .title.countdown__timer data-valid-till=invoice.valid_till_time
+    .is-block
+      = invoice.bitcoin_uri_qr_code.html_safe

@@ -1,0 +1,9 @@
+header.header
+  .container
+    .header-left
+      .header-item
+        = link_to root_path do
+          = image_tag "logo.svg", size: "200x50"
+      .header-item
+        .subtitle.is-5
+          = link_to "New Invoice", new_invoice_path, class: "link is-info"
