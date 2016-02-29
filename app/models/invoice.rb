@@ -18,8 +18,4 @@ class Invoice < ActiveRecord::Base
   }
 
   validates :price_cents, :currency, presence: true
-
-  def qr_code_path
-    "/qr_codes/#{uuid}.png"
-  end
 end
