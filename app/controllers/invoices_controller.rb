@@ -20,7 +20,7 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).permit(:uuid, :custom_id, :price_cents, :currency)
+    params.require(:invoice).permit(:custom_id, :price_cents, :currency)
   end
 
   def check_qr_code_validity!

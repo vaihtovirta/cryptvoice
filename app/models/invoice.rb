@@ -1,6 +1,4 @@
 class Invoice < ActiveRecord::Base
-  self.primary_key = "uuid"
-
   monetize :price_cents, with_model_currency: :currency
 
   enum status: {
@@ -23,9 +21,5 @@ class Invoice < ActiveRecord::Base
 
   def qr_code_path
     "/qr_codes/#{uuid}.png"
-  end
-
-  def to_param
-    uuid
   end
 end
