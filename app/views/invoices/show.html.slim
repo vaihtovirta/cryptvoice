@@ -4,5 +4,5 @@
       = link_to "", new_invoice_path, class: "delete"
       .countdown.is-half.is-offset-quarter
         .title.countdown__timer data-valid-till=invoice.valid_till_time
-    .is-block
+    .is-block.qr-code
       = invoice.bitcoin_uri_qr_code.html_safe

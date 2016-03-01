@@ -9,7 +9,7 @@ FactoryGirl.define do
     status "pending"
     currency "USD"
     btc_address { Faker::Bitcoin.address }
-    price_cents 10_000
+    price { Money.new(10_000) }
     valid_till { Time.zone.now + 10.minutes }
     bitcoin_uri { "bitcoin:#{btc_address}?amount=0.1&label=#{custom_id}" }
   end

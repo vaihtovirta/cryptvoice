@@ -1,4 +1,6 @@
 class Invoice < ActiveRecord::Base
+  include PresenterWrapper
+
   monetize :price_cents,
     with_model_currency: :currency,
     numericality: { greater_than: 0 }
@@ -20,4 +22,8 @@ class Invoice < ActiveRecord::Base
   }
 
   validates :price_cents, :currency, presence: true
+
+  def bitcoin_uri_valid?
+    valid_till < Time.zone.now
+  end
 end

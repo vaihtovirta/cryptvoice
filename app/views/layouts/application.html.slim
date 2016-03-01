@@ -8,7 +8,7 @@ html[lang="en"]
     title Cryptvoice
     = stylesheet_link_tag :application, media: "all"
     = csrf_meta_tags
-body
-  = render "navigation"
-  = yield
-  = render "javascript"
+  body
+    = render "navigation"
+    = yield
+    = render "javascript"
