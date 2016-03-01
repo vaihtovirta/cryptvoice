@@ -1,5 +1,7 @@
 class Invoice < ActiveRecord::Base
-  monetize :price_cents, with_model_currency: :currency
+  monetize :price_cents,
+    with_model_currency: :currency,
+    numericality: { greater_than: 0 }
 
   enum status: {
     pending:   0,

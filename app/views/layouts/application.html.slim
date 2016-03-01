@@ -9,7 +9,6 @@ html[lang="en"]
     = stylesheet_link_tag :application, media: "all"
     = csrf_meta_tags
 body
-  = render "flashes"
-  = render "shared/navigation"
+  = render "navigation"
   = yield
   = render "javascript"

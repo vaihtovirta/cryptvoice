@@ -1,4 +1,5 @@
 .invoice-form.column.is-half
+  = render "errors", resource: invoice
   = simple_form_for invoice do |f|
     .control
       .label

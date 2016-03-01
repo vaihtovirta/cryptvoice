@@ -1,6 +1,8 @@
 if ENV.fetch("COVERAGE", false)
   require "simplecov"
-  SimpleCov.start "rails"
+  SimpleCov.start "rails" do
+    add_filter ".bundle"
+  end
 end
 
 RSpec.configure do |config|

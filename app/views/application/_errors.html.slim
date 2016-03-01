@@ -1,0 +1,6 @@
+- if resource.errors.present?
+  .column.notification.is-danger
+    ul
+      - resource.errors.full_messages.each do |error_message|
+        li = error_message
+      
