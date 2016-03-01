@@ -5,4 +5,5 @@ addons:
   postgresql: "9.4"
 script:
   - RAILS_ENV=test bundle exec rake db:create db:schema:load db:test:prepare
-  - bin/ci
+  - xvfb-run bin/rspec spec
+  - bin/quality
