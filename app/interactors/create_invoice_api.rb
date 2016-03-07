@@ -22,7 +22,7 @@ class CreateInvoiceApi
   end
 
   def new_invoice
-    @invoice ||= Api::Invoice.new(prepared_params)
+    @invoice ||= API::Invoice.new(prepared_params)
   end
 
   def prepared_params

@@ -23,6 +23,8 @@ class Invoice < ActiveRecord::Base
 
   validates :price_cents, :currency, presence: true
 
+  scope :unconfirmed, -> { where.not(status: statuses[:confirmed]) }
+
   def bitcoin_uri_valid?
     valid_till < Time.zone.now
   end

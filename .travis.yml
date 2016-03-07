@@ -3,6 +3,8 @@ rvm:
   - 2.3.0
 addons:
   postgresql: "9.4"
+  code_climate:
+      repo_token: 106c94315969585825a529e64f9d617c6280bce07ae20fb325d43321c896c2d9
 script:
   - RAILS_ENV=test bundle exec rake db:create db:schema:load db:test:prepare
   - xvfb-run bin/rspec spec
