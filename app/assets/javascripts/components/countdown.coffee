@@ -1,3 +1,5 @@
+window.App ||= {}
+
 class Countdown
   constructor: (element, validTill)->
     @clock = element

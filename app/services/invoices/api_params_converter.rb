@@ -1,8 +1,7 @@
 module Invoices
   class ApiParamsConverter
     API_KEY_MAPPINGS = {
-      custom_id: :id,
-      price_cents: :price
+      custom_id: :id
     }.freeze
 
     attr_reader :params

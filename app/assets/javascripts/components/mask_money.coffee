@@ -1,13 +1,17 @@
+window.App ||= {}
+
 class MaskMoney
   constructor: (element)->
-    @select = element
+    @input = element
     @_initMaskMoney()
 
   _initMaskMoney: () ->
-    @select.maskMoney
+    @input.maskMoney
       thousands: ''
+    @input.maskMoney("mask")
 
-PRICE_INPUT = $("#invoice_price_cents")
+
+PRICE_INPUT = $("#invoice_price")
 
 if PRICE_INPUT.length
   window.App.MaskMoney = new MaskMoney(PRICE_INPUT)
