@@ -14,7 +14,6 @@ gem "pg"
 gem "puma"
 gem "rack-canonical-host"
 gem "rails", "~> 4.2.5.2"
-gem "recipient_interceptor"
 gem "responders"
 gem "rqrcode"
 gem "sass-rails", "~> 5.0"
@@ -52,15 +51,10 @@ group :development, :test do
   gem "rspec-rails", "~> 3.4.0"
 end
 
-group :development, :staging do
-  gem "rack-mini-profiler", require: false
-end
-
 group :test do
   gem "capybara-webkit"
   gem "codeclimate-test-reporter"
   gem "database_cleaner"
-  gem "formulaic"
   gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "vcr"
