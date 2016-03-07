@@ -4,6 +4,9 @@ if ENV.fetch("COVERAGE", false)
   require "simplecov"
   SimpleCov.start "rails" do
     add_filter ".bundle"
+    add_filter "app/controllers/admin"
+    add_filter "app/fields"
+    add_filter "app/dashboards"
   end
 end
 
