@@ -58,6 +58,7 @@ end
 
 group :test do
   gem "capybara-webkit"
+  gem "codeclimate-test-reporter"
   gem "database_cleaner"
   gem "formulaic"
   gem "shoulda-matchers"

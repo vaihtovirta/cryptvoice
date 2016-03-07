@@ -1,9 +1,13 @@
+require "codeclimate-test-reporter"
+
 if ENV.fetch("COVERAGE", false)
   require "simplecov"
   SimpleCov.start "rails" do
     add_filter ".bundle"
   end
 end
+
+CodeClimate::TestReporter.start
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
