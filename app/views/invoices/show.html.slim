@@ -1,8 +1,10 @@
-.invoice-qr-code.column.is-half.is-offset-4
+.invoice-qr-code.column.is-offset-4
   .column.is-half
     .notification.is-primary
       = link_to "", new_invoice_path, class: "delete"
-      .countdown.is-half.is-offset-quarter
+      .countdown.is-half.is-offset-quarter.is-unselectable
         .title.countdown__timer data-valid-till=invoice.valid_till_time
     .is-block.qr-code
       = invoice.bitcoin_uri_qr_code.html_safe
+    .subtitle.is-text-centered.invoice-qr-code__btc-address
+      p= "BTC Address: #{invoice.btc_address}"

@@ -1,6 +1,11 @@
 .invoice-qr-code {
   svg {
     display: block;
+
     margin: 0 auto;
   }
+}
+
+.invoice-qr-code__btc-address {
+  margin-top: 1rem;
 }
