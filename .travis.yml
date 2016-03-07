@@ -6,6 +6,6 @@ addons:
   code_climate:
       repo_token: 106c94315969585825a529e64f9d617c6280bce07ae20fb325d43321c896c2d9
 script:
-  - RAILS_ENV=test bundle exec rake db:create db:schema:load db:test:prepare
+  - RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
   - xvfb-run bin/rspec spec
   - bin/quality
