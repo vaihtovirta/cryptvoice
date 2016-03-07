@@ -21,6 +21,8 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "slim-rails"
 gem "uglifier"
+gem "sidekiq"
+gem "sidetiq"
 
 source "https://rails-assets.tenex.tech" do
   gem "rails-assets-jquery-maskmoney"

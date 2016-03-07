@@ -1,4 +1,4 @@
-require_relative "#{Rails.root}/app/middleware/api_key_authetication"
+require "api_key_authentication"
 
 Her::API.setup url: ENV["CRYPTOPAY_API_ENDPOINT"] do |connection|
   connection.use ApiKeyAuthentication
