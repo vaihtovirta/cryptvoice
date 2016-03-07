@@ -15,7 +15,7 @@ describe InvoicesController do
   end
 
   describe "#POST create", vcr: { cassette_name: "cryptopay_api/post_invoices" } do
-    let(:attributes) { attributes_for(:invoice).slice(:custom_id, :price_cents, :currency) }
+    let(:attributes) { attributes_for(:invoice).slice(:custom_id, :price, :currency) }
     before { post :create, invoice: attributes }
 
     it { is_expected.to respond_with(302) }

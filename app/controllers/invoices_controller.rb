@@ -19,7 +19,7 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_params
-    params.require(:invoice).permit(:custom_id, :price_cents, :currency)
+    params.require(:invoice).permit(:custom_id, :price, :currency)
   end
 
   def check_bitcoin_uri_validity!

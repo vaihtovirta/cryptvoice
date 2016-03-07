@@ -5,7 +5,7 @@
       .label
       = f.input_field :custom_id, placeholder: "Custom Id", class: "input is-medium"
     .control.is-grouped
-      = f.input_field :price_cents, as: :string, placeholder: "Price", class: "input is-medium"
+      = f.input_field :price, placeholder: "Price", class: "input is-medium"
       span.select.invoice-form__currency-select-wrapper
         = f.input_field :currency,
           collection: currencies,
