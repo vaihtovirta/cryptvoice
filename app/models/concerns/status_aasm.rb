@@ -1,5 +1,6 @@
 module StatusAasm
   extend ActiveSupport::Concern
+
   included do
     include AASM
 

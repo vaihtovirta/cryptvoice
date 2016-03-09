@@ -4,7 +4,7 @@ class CreateInvoiceApi
   delegate :params, to: :context
 
   after do
-    context.invoice_attributes = saved_invoice.attributes
+    context.invoice_attributes = invoice.attributes
   end
 
   def call
@@ -14,18 +14,14 @@ class CreateInvoiceApi
   private
 
   def create_invoice
-    context.fail! unless saved_invoice
+    context.fail! unless invoice.save
   end
 
-  def saved_invoice
-    @saved_invoice ||= new_invoice.save
-  end
-
-  def new_invoice
+  def invoice
     @invoice ||= API::Invoice.new(prepared_params)
   end
 
   def prepared_params
-    @prepared_params ||= Invoices::ApiParamsConverter.new(params).call
+    Invoices::ApiParamsConverter.new(params).call
   end
 end
