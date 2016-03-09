@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.3.0"
 
+gem "aasm"
 gem "administrate"
 gem "bulma-rails", "~> 0.0.14"
 gem "coffee-rails"

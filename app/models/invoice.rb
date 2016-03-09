@@ -1,5 +1,5 @@
 class Invoice < ActiveRecord::Base
-  include PresenterWrapper
+  include PresenterWrapper, StatusAasm
 
   monetize :price_cents,
     with_model_currency: :currency,

@@ -7,6 +7,7 @@ require "spec_helper"
 require "webmock/rspec"
 require "sidekiq/testing"
 require "vcr"
+require "aasm/rspec"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |file| require file }
 

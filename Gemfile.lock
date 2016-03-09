@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.tenex.tech/
   specs:
+    aasm (4.9.0)
     actionmailer (4.2.5.2)
       actionpack (= 4.2.5.2)
       actionview (= 4.2.5.2)
@@ -371,6 +372,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm
   administrate
   awesome_print
   better_errors
