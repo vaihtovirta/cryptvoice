@@ -8,6 +8,7 @@ FactoryGirl.define do
     callback_params { { format: "anything" }.to_json }
     status "pending"
     currency "USD"
+    btc_price "0.001"
     btc_address { Faker::Bitcoin.address }
     price_cents 10_000
     price { Money.new(10_000) }

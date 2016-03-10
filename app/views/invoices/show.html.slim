@@ -6,5 +6,6 @@
         .title.countdown__timer data-valid-till=invoice.valid_till_time
     .is-block.qr-code
       = invoice.bitcoin_uri_qr_code.html_safe
-    .subtitle.is-text-centered.invoice-qr-code__btc-address
-      p= "BTC Address: #{invoice.btc_address}"
+    .subtitle.is-text-left.invoice-qr-code__btc-address
+      p= invoice.bitcoin_price
+      p= invoice.bitcoin_address

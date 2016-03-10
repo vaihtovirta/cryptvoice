@@ -26,9 +26,6 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.allow_http_connections_when_no_cassette = true
-  config.default_cassette_options = {
-    re_record_interval: 3.days
-  }
 end
 
 ActiveRecord::Migration.maintain_test_schema!

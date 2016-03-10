@@ -18,6 +18,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
     currency: EnumField.with_options(searchable: false),
     btc_address: Field::String,
     bitcoin_uri: Field::String,
+    btc_price: Field::String,
     price: Field::String,
     valid_till: Field::DateTime,
     created_at: Field::DateTime,
@@ -29,7 +30,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = %i(uuid custom_id name description updated_at).freeze
+  COLLECTION_ATTRIBUTES = %i(uuid custom_id name status btc_price updated_at).freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
@@ -42,6 +43,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
     callback_params
     status
     currency
+    btc_price
     btc_address
     bitcoin_uri
     price
@@ -62,6 +64,7 @@ class InvoiceDashboard < Administrate::BaseDashboard
     callback_params
     status
     currency
+    btc_price
     btc_address
     bitcoin_uri
     price

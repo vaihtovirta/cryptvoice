@@ -2,6 +2,7 @@ module Invoices
   class ModelAttributesConverter
     MODEL_ATTRIBUTES = %i(
       uuid
+      btc_price
       btc_address
       bitcoin_uri
       callback_params
